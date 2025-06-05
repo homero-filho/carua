@@ -41,11 +41,8 @@ const styles = StyleSheet.create({
     color: "#007BFF",
     marginBottom: 20,
   },
-  logo: {
-    width: 100,
-    height: 100,
-    marginBottom: 20,
-  },
+  
+  
   textInput: {
     backgroundColor: "#fff",
     width: "100%",
@@ -66,10 +63,11 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   botao: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#00a8ff",
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     borderRadius: 10,
+    alignItems: "center"
   },
   botaoTexto: {
     color: "#fff",
@@ -80,8 +78,8 @@ const styles = StyleSheet.create({
   logo: {
     marginTop: -150,
     position: "relative",
-    width: 200,
-    height: 201
+    width: 280,
+    height: 281
 
   },
 

@@ -1,17 +1,21 @@
-import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+
 
 export default function Apk() {
-  const [telefone, setDuvida] = useState();
-  
-  
+  const [telefone, setTelefone] = useState();
+  const [senha, setSenha] = useState();
+  const [input2, setInput2] = useState();
+  const [input3, setInput3] = useState();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.backIcon}>
-        <Ionicons name="arrow-back" size={28} color="#000" />
-      </View>
+    <ScrollView style={styles.container}>
+      
+      {/* Ícone de seta decorativa */}
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={28} color="white" />
+            </TouchableOpacity>
 
       <Text style={styles.texto}>Perguntas Frequentes</Text>
 
@@ -24,7 +28,7 @@ export default function Apk() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          onChangeText={value => setDuvida(value)}
+          onChangeText={value => setTelefone(value)}
           placeholder=""
           placeholderTextColor="#ADD8E6"
           secureTextEntry
@@ -34,7 +38,7 @@ export default function Apk() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          onChangeText={value => setDuvida(value)}
+          onChangeText={value => setSenha(value)}
           placeholder=""
           placeholderTextColor="#ADD8E6"
           secureTextEntry
@@ -44,7 +48,7 @@ export default function Apk() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          onChangeText={value => setDuvida(value)}
+          onChangeText={value => setInput2(value)}
           placeholder=""
           placeholderTextColor="#ADD8E6"
           secureTextEntry
@@ -54,13 +58,13 @@ export default function Apk() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          onChangeText={value => setDuvida(value)}
+          onChangeText={value => setInput3(value)}
           placeholder=""
           placeholderTextColor="#ADD8E6"
           secureTextEntry
         />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

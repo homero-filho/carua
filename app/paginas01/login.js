@@ -1,135 +1,192 @@
-import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { useState } from 'react';
+import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet, StatusBar, } from 'react-native'
+import { useState } from 'react'
+
 
 export default function Apk() {
-  const [telefone, setTelefone] = useState();
-  const [senha, setSenha] = useState();
 
-  function validarLogin() {
-  }
 
-  return (
-    <View style={styles.container}>
-      <Image
-        source={require("../../src/assets/gps.png")}
-        style={styles.logo}
-      />
+    const [telefone, setTelefone] = useState()
+    const [senha, setSenha] = useState()
+    const [confirmarsenha, setConfirmarSenha] = useState()
 
-      <Text style={styles.texto}> Caruaru Tour </Text>
+    function validarLogin() {
 
-      <View style={styles.inputContainer}>
-        <Image
-          source={require('../../src/assets/user.png')} 
-          style={styles.icon}
-        />
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setTelefone(value)}
-          placeholder='usuário'
-          placeholderTextColor={"#ADD8E6"}
-        />
-      </View>
 
-      <View style={styles.inputContainer}>
-        <Image
-          source={require('../../src/assets/senha.png')} 
-          style={styles.icon}
-        />
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setSenha(value)}
-          placeholder='senha'
-          placeholderTextColor={"#ADD8E6"}
-          secureTextEntry
-        />
-      </View>
+    }
+    return (
+        <View style={styles.container}>
+            <Image
+                source={require("../../src/assets/gps.png")}
+                style={styles.logo}
+            />
 
-      <TouchableOpacity style={styles.botao2}>
-        <Text style={styles.botao2}> Esqueceu sua senha?</Text>
-      </TouchableOpacity>
+            <Text style={styles.texto}> Caruaru Tour </Text>
 
-      <TouchableOpacity style={styles.botao} onPress={validarLogin}>
-        <Text style={styles.botao1}> Acesse </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.botao2}>
-        <Text style={styles.botao2}> Não possui uma conta? Crie aqui!</Text>
-      </TouchableOpacity>
-    </View>
-  );
+            <View style={styles.inputContainer}>
+                <Image
+                    source={require('../../src/assets/user.png')}
+                    style={styles.icon}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={value => setTelefone(value)}
+                    placeholder='usuário'
+                    placeholderTextColor={"#ADD8E6"}
+                />
+            </View>
+
+
+            <View style={styles.inputContainer}>
+                <Image
+                    source={require('../../src/assets/senha.png')}
+                    style={styles.icon}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    onChangeText={value => setSenha(value)}
+                    placeholder='senha'
+                    placeholderTextColor={"#ADD8E6"}
+                    secureTextEntry
+                />
+            </View>
+
+
+
+            <TouchableOpacity style={styles.botao2}>
+                <Text style={styles.botao2}> Esqueceu sua senha? Clique aqui!</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.botao} onPress={validarLogin}>
+                <Text style={styles.botao1}> Acessar </Text>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity style={styles.botao2}>
+                <Text style={styles.botao2}> Ainda não possui uma conta? Cadastre-se aqui</Text>
+            </TouchableOpacity>
+
+
+        </View>
+    );
 }
 
+
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#ADD8E6",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+    container: {
+        flex: 1,
+        backgroundColor: "#ADD8E6",
+        justifyContent: "center",
+        alignItems: "center",
 
-  logo: {
-    marginTop: -150,
-    position: "relative",
-    width: 200,
-    height: 201
-  },
+    },
 
-  texto: {
-    fontSize: 50,
-    position: "absolute",
-    top: 10,
-    fontWeight: "bold",
-    fontFamily: "roboto",
-    color: "#00a8ff"
-  },
+    logo: {
+        marginTop: -250,
+        position: "relative",
+        width: 200,
+        height: 201
 
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#00a8ff',
-    paddingHorizontal: 10,
-    height: 45,
-    marginTop: 10,
-    borderRadius: 10,
-    width: 300,
-  },
+    },
 
-  icon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
+    texto: {
+        fontSize: 50,
+        position: "absolute",
+        top: 10,
+        fontWeight: "bold",
+        fontFamily: "roboto",
+        color: "#00a8ff"
+    },
 
-  textInput: {
-    flex: 1,
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: '#fff',
-  },
+    texto1: {
+        fontSize: 30,
+        fontWeight: "bold",
+        fontFamily: "roboto",
+        color: "#F8F8FF"
+    },
 
-  botao1: {
-    fontFamily: "roboto",
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#F8F8FF",
-  },
+    input: {
+        backgroundColor: "#00a8ff",
+        padding: 10,
+        height: 45,
+        marginTop: 10,
+        borderRadius: 10,
+        fontWeight: "bold",
+        fontSize: 20,
+        width: 300
 
-  botao: {
-    alignItems: "center",
-    backgroundColor: "#00a8ff",
-    padding: 10,
-    width: "30%",
-    height: 45,
-    marginTop: 200,
-    borderRadius: 10,
-    fontWeight: "bold",
-    fontSize: 20,
-  },
 
-  botao2: {
-    color: "#00a8ff",
-    fontFamily: "roboto",
-    fontWeight: "bold",
-    marginBottom: -100
-  }
-});
+
+
+
+
+
+
+    },
+    
+
+    botao1: {
+        fontFamily: "roboto",
+        fontSize: 22,
+        fontWeight: "bold",
+        color: "#F8F8FF"
+    },
+
+    botao: {
+        alignItems: "center",
+        backgroundColor: "#00a8ff",
+        padding: 10,
+        width: "50%",
+        height: 45,
+        marginTop: 200,
+        borderRadius: 10,
+        fontWeight: "bold",
+        fontSize: 20
+
+    },
+
+    botao2: {
+        color: "#00a8ff",
+        fontFamily: "roboto",
+        fontWeight: "bold",
+        marginBottom: -150
+    },
+
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#00a8ff',
+        paddingHorizontal: 10,
+        height: 45,
+        marginTop: 10,
+        borderRadius: 10,
+        width: 300,
+    },
+
+    icon: {
+        width: 24,
+        height: 24,
+        marginRight: 10,
+    }
+
+
+
+
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+

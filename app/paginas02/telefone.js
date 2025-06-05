@@ -1,64 +1,63 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { AntDesign } from '@expo/vector-icons'; // Ícone de seta
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; 
+import { useNavigation } from '@react-navigation/native';
 
 export default function Contato() {
-  return (
-    <View style={styles.container}>
+  const navigation = useNavigation();
 
-      {/* Seta estética no canto superior esquerdo */}
-      <AntDesign name="arrowleft" size={28} color="black" style={styles.seta} />
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <TouchableOpacity style={styles.seta} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={28} color="white" />
+      </TouchableOpacity>
 
       <Text style={styles.titulo}>Contatos</Text>
 
       <Image
-        source={require("../../src/assets/contato.png")} // Substitua pelo seu ícone
+        source={require("../../src/assets/contato.png")}
         style={styles.logo}
         resizeMode="contain"
       />
 
-      {/* Caixa 1: Telefone */}
       <View style={styles.caixaContato}>
         <Text style={styles.textoContato}>Telefone de Contato:</Text>
         <Text style={styles.textoInfo}>(99) 9999-9999</Text>
       </View>
 
-      {/* Caixa 2: Email */}
       <View style={styles.caixaContato}>
         <Text style={styles.textoContato}>Email de Contato:</Text>
         <Text style={styles.textoInfo}>exemplo@email.com</Text>
       </View>
-
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: "#ADD8E6",
     paddingTop: 50,
     alignItems: "center",
   },
-
   seta: {
     position: "absolute",
     top: 40,
     left: 20,
+    padding: 10,
+    backgroundColor: "#3FA9F5", 
+    borderRadius: 8
   },
-
   titulo: {
     fontSize: 26,
     fontWeight: "bold",
     color: "#00a8ff",
     marginBottom: 10,
   },
-
   logo: {
     width: 150,
     height: 150,
     marginBottom: 30,
   },
-
   caixaContato: {
     backgroundColor: "#00a8ff",
     padding: 15,
@@ -66,13 +65,11 @@ const styles = StyleSheet.create({
     width: 300,
     marginBottom: 20,
   },
-
   textoContato: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
   },
-
   textoInfo: {
     color: "#fff",
     fontSize: 16,

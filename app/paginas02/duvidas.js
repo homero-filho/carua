@@ -1,21 +1,20 @@
-import { View, Text, TextInput, Image, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
-
-export default function Apk() {
+export default function Duvidas() {
   const [telefone, setTelefone] = useState();
   const [senha, setSenha] = useState();
   const [input2, setInput2] = useState();
   const [input3, setInput3] = useState();
 
   return (
-    <ScrollView style={styles.container}>
-      
+    <View style={styles.container}>
       {/* Ícone de seta decorativa */}
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-              <Ionicons name="arrow-back" size={28} color="white" />
-            </TouchableOpacity>
+      <View style={styles.backIcon}>
+        <Ionicons name="arrow-back" size={28} color="#FFF" />
+      </View>
 
       <Text style={styles.texto}>Perguntas Frequentes</Text>
 
@@ -64,7 +63,7 @@ export default function Apk() {
           secureTextEntry
         />
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -81,6 +80,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 50,
     left: 20,
+    backgroundColor:"#3FA9F5",
+    borderRadius: 8,
+    width: 40,
+    height: 40,
+   justifyContent: 'center',
+    alignItems: 'center',
   },
 
   texto: {

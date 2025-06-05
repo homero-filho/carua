@@ -1,8 +1,9 @@
-import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet, StatusBar, } from 'react-native'
+import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet, StatusBar} from 'react-native'
 import { useState } from 'react'
+import { Link } from 'expo-router'
 
 
-export default function Apk() {
+export default function Login() {
 
 
     const [telefone, setTelefone] = useState()
@@ -52,7 +53,6 @@ export default function Apk() {
             </View>
 
 
-
             <TouchableOpacity style={styles.botao2}>
                 <Text style={styles.botao2}> Esqueceu sua senha? Clique aqui!</Text>
             </TouchableOpacity>
@@ -60,12 +60,11 @@ export default function Apk() {
             <TouchableOpacity style={styles.botao} onPress={validarLogin}>
                 <Text style={styles.botao1}> Acessar </Text>
             </TouchableOpacity>
-
+            
 
             <TouchableOpacity style={styles.botao2}>
                 <Text style={styles.botao2}> Ainda não possui uma conta? Cadastre-se aqui</Text>
             </TouchableOpacity>
-
 
         </View>
     );

@@ -1,6 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { Link } from "expo-router";
 
-export default function Login() {
+export default function Principal() {
   return (
       <View style={styles.container}>
           <Image
@@ -15,14 +16,20 @@ export default function Login() {
       <Text style={styles.link}>Seja bem-vindo ao Caruaru Tour!</Text>
 
       <View style={styles.buttonRow}>
+        <Link href={"/paginas01/login"} asChild>
+        
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.botaoTexto}>Acessar Conta</Text>
         </TouchableOpacity>
+        </Link>
 
+        <Link href={"/paginas01/cadastro"} asChild>
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.botaoTexto}>Cadastrar Conta</Text>
         </TouchableOpacity>
+        </Link>
       </View>
+      
     </View>
   );
 }
@@ -92,3 +99,4 @@ const styles = StyleSheet.create({
     color: "#00a8ff"
   }
 });
+

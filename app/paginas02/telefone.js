@@ -1,8 +1,7 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
-import { useNavigation } from '@react-navigation/native';
-
-export default function Contato() {
+import { Link } from 'expo-router';
+export default function Telefone() {
   const navigation = useNavigation();
 
   return (

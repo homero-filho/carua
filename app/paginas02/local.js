@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView} from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
-export default function Apk({ navigation }) {
+export default function Local({ navigation }) {
   const [avaliacao, setAvaliacao] = useState(0);
   const [comentario, setComentario] = useState('');
 
@@ -53,17 +54,8 @@ export default function Apk({ navigation }) {
         </View>
       </View>
 
-      {/* Comentários */}
-      <View style={styles.comentarios}>
-        <TextInput
-          placeholder="Como foi sua experiência?"
-          placeholderTextColor={"#3FA9F5"}
-          value={comentario}
-          onChangeText={setComentario}
-          style={styles.input}
-          multiline
-        />
-      </View>
+     
+      
     </ScrollView>
   );
 }

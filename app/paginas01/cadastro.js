@@ -1,8 +1,10 @@
 import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet, StatusBar, } from 'react-native'
 import { useState } from 'react'
+import { Link } from "expo-router";
 
 
-export default function Apk() {
+
+export default function Cadastro() {
 
 
   const [telefone, setTelefone] = useState()
@@ -65,15 +67,15 @@ export default function Apk() {
           </View>
     
           <TouchableOpacity style={styles.botao2}>
-            <Text style={styles.botao2}> Esqueceu sua senha?</Text>
+            <Text style={styles.botao2}> </Text>
           </TouchableOpacity>
-    
+          <Link href={"/paginas03/pontos"} asChild> 
           <TouchableOpacity style={styles.botao} onPress={validarLogin}>
-            <Text style={styles.botao1}> Acesse </Text>
+            <Text style={styles.botao1}> Criar </Text>
           </TouchableOpacity>
-    
+          </Link>
           <TouchableOpacity style={styles.botao2}>
-            <Text style={styles.botao2}> Não possui uma conta? Crie aqui!</Text>
+            <Text style={styles.botao2}> Já possui conta? Acesse aqui</Text>
           </TouchableOpacity>
         </View>
       );

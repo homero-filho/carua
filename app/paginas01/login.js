@@ -56,10 +56,11 @@ export default function Login() {
             <TouchableOpacity style={styles.botao2}>
                 <Text style={styles.botao2}> Esqueceu sua senha? Clique aqui!</Text>
             </TouchableOpacity>
-
+            <Link href={"/paginas03/pontos"} asChild>
             <TouchableOpacity style={styles.botao} onPress={validarLogin}>
                 <Text style={styles.botao1}> Acessar </Text>
             </TouchableOpacity>
+            </Link>
             
 
             <TouchableOpacity style={styles.botao2}>

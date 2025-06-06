@@ -18,21 +18,50 @@ export default function Local1({ navigation }) {
           
         </View>
         <View>
-          <Text style={styles.local}>Local</Text>
-          <Text style={styles.categoria}>categorias</Text>
+          <Text style={styles.local}>Caruaru Shopping</Text>
+          <Text style={styles.categoria}>Lazer</Text>
         </View>
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
       {/* Imagem do local */}
-      <View style={styles.imagemPlaceholder}>
-        <Text style={styles.placeholderText}>[ Imagem do Local ]</Text>
-      </View>
+      <View style={styles.imagemContainer}>
+  <Image
+    source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+    style={styles.imagemLocal}
+    resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+  />
+</View>
+
 
       {/* Informações */}
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Local</Text>
-        <Text style={styles.link}>Descrição, informações adicionais e horário de funcionamento</Text> 
+        <Text style={styles.titulo}>Informações:</Text>
+        <Text style={styles.link}>Shopping Caruaru é o maior shopping do interior do Nordeste. Seu destaque se dá pela ampla variedade de lojas, opções de lazer e restaurantes.</Text> 
+        
+        <Text style={styles.titulo2}>Endereço:</Text>
+        <Text style={styles.link}>
+      •Av. Adjar da Silva Casé, 800 - Indianópolis, Caruaru - PE, 55024-740
+    </Text>
+        
+        
+        
+        
+        <Text style={styles.titulo2}>Horário</Text>
+        <Text style={styles.link}>
+      •Lojas:{"\n"}
+      ∘Segunda a Sábado: 10h às 22h{"\n"}
+      ∘Domingo: 12h às 21h 
+      {"\n"}{"\n"}
+      •Praça de Alimentação:{"\n"} 
+      ∘Segunda a Sábado: 11h às 22h{"\n"}
+      ∘Domingo: 11h às 21h
+    </Text>
+
+    
+        
+
+      
       </View>
 
       {/* Avaliação */}
@@ -120,6 +149,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+
+  titulo2:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 8
+
+  },
  
   link: {
     color: '#3FA9F5',
@@ -151,5 +187,19 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     
-  }
+  },
+
+  imagemContainer: {
+  height: 200,
+  borderRadius: 12,
+  overflow: 'hidden',
+  backgroundColor: '#ccc',
+  marginVertical: 20,
+},
+
+imagemLocal: {
+  width: '100%',
+  height: '100%',
+},
+
 });

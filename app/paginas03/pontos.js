@@ -6,31 +6,31 @@ import { Link } from 'expo-router';
 export default function Pontos() {
   const locais = [
     { id: '1', nome: 'Caruaru Shopping', 
-      descricao: 'Local completo para família', 
+      
       imagem: require('../../src/assets/caruaru.jpg'),
     link: 'local1'},
     { id: '2', nome: 'Pátio do Forró', 
-      descricao: 'Maior e melhor são joão do mundo', 
+      
       imagem: require('../../src/assets/forro.jpg'),
           link: 'local2'},
-    { id: '3', nome: 'Prime Grill',
-       descricao: 'Melhor e mais completo rodizio de carnes e massas da cidade.',
+    
+          { id: '3', nome: 'Prime Grill',
         imagem: require('../../src/assets/prime.jpeg'),
         link: 'local3'},
-    { id: '4', nome: 'Parque Ambiental',
-       descricao: 'Espaço aberto perfeito para passar a tarde.', 
+    
+        { id: '4', nome: 'Parque Ambiental',
        imagem: require('../../src/assets/parque.jpg'),
       link: 'local4'},
-    { id: '5', nome: 'Estação Ferroviária', 
-      descricao: 'Patrimônio da cidade.', 
+    
+      { id: '5', nome: 'Estação Ferroviária', 
       imagem: require('../../src/assets/ferro.jpeg'), 
       link: 'local5'},
-    { id: '6', nome: 'Alto do Moura',
-       descricao: 'Maior centro de artes figurativas da AméricaMaior centro de artes figurativas da América.', 
+    
+      { id: '6', nome: 'Alto do Moura',
        imagem: require('../../src/assets/alto.jpg'),
        link: 'local6'},
-    { id: '7', nome: 'Monte Bom Jesus', 
-      descricao: 'Um dos pontos mais emblemáticos da cidade, oferecendo uma bela vista panorâmica de Caruaru.', 
+   
+       { id: '7', nome: 'Monte Bom Jesus', 
       imagem: require('../../src/assets/monte.png'), link:'local7'},
 
   ];

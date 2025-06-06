@@ -24,9 +24,12 @@ export default function Local1({ navigation }) {
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
-      {/* Imagem do local */}
-      <View style={styles.imagemPlaceholder}>
-        <Text style={styles.placeholderText}>[ Imagem do Local ]</Text>
+       <View style={styles.imagemContainer}>
+        <Image
+          source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+          style={styles.imagemLocal}
+          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+        />
       </View>
 
       {/* Informações */}
@@ -151,5 +154,18 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     
-  }
+  },
+
+  imagemContainer: {
+  height: 200,
+  borderRadius: 12,
+  overflow: 'hidden',
+  backgroundColor: '#ccc',
+  marginVertical: 20,
+},
+
+imagemLocal: {
+  width: '100%',
+  height: '100%',
+}
 });

@@ -18,21 +18,47 @@ export default function Local1({ navigation }) {
           
         </View>
         <View>
-          <Text style={styles.local}>Local</Text>
-          <Text style={styles.categoria}>categorias</Text>
+          <Text style={styles.local}>Pátio do Forroó</Text>
+          <Text style={styles.categoria}>evento</Text>
         </View>
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
-      {/* Imagem do local */}
-      <View style={styles.imagemPlaceholder}>
-        <Text style={styles.placeholderText}>[ Imagem do Local ]</Text>
+       <View style={styles.imagemContainer}>
+        <Image
+          source={require('../../src/assets/forro.jpg')} // coloque aqui sua imagem real
+          style={styles.imagemLocal}
+          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+        />
       </View>
 
       {/* Informações */}
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Local</Text>
-        <Text style={styles.link}>Descrição, informações adicionais e horário de funcionamento</Text> 
+        <Text style={styles.titulo}>Informações:</Text>
+        <Text style={styles.link}>O Pátio do Forró em Caruaru, também conhecido como Pátio de Eventos Luiz Gonzaga, é um palco principal do São João de Caruaru, a maior festa junina do Brasil, e tem a categoria de um espaço de grande evento, com foco em shows de forró e atividades festivas</Text>
+        
+        <Text style={styles.titulo2}>Endereço:</Text>
+                <Text style={styles.link}>
+•R. Agnelo Dias Vidal - Nossa Sra. das Dores, Caruaru - PE, 55002-310            </Text>
+        
+        
+        <Text style={styles.titulo2}>Horário:</Text>
+        <Text style={styles.link}>
+        •Pablo{"\n"}
+        ∘19h30
+        {"\n"} {"\n"}
+        •Pablo{"\n"}
+        ∘19h30
+        {"\n"} {"\n"}
+        •Pablo{"\n"}
+        ∘19h30
+        
+
+
+
+        </Text>
+       
+        
       </View>
 
       {/* Avaliação */}
@@ -120,6 +146,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+
+  titulo2:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 8
+
+  },
  
   link: {
     color: '#3FA9F5',
@@ -151,5 +184,19 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     
-  }
+  },
+
+  imagemContainer: {
+  height: 200,
+  borderRadius: 12,
+  overflow: 'hidden',
+  backgroundColor: '#ccc',
+  marginVertical: 20,
+},
+
+imagemLocal: {
+  width: '100%',
+  height: '100%',
+}
+
 });

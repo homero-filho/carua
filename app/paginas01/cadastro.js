@@ -74,9 +74,12 @@ export default function Cadastro() {
             <Text style={styles.botao1}> Criar </Text>
           </TouchableOpacity>
           </Link>
+
+          <Link href={"/paginas01/login"} asChild>
           <TouchableOpacity style={styles.botao2}>
             <Text style={styles.botao2}> Já possui conta? Acesse aqui</Text>
           </TouchableOpacity>
+          </Link>
         </View>
       );
     }
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ADD8E6",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
 
   },
 
@@ -164,13 +167,13 @@ const styles = StyleSheet.create({
     height: 45,
     marginTop: 10,
     borderRadius: 10,
-    width: 300,
+    width: 300
   },
 
   icon: {
     width: 24,
     height: 24,
-    marginRight: 10,
+    marginRight: 10
   }
 
 

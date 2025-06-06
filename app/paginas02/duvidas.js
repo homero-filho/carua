@@ -11,10 +11,7 @@ export default function Duvidas() {
 
   return (
     <View style={styles.container}>
-      {/* Ícone de seta decorativa */}
-      <View style={styles.backIcon}>
-        <Ionicons name="arrow-back" size={28} color="#FFF" />
-      </View>
+    
 
       <Text style={styles.texto}>Perguntas Frequentes</Text>
 

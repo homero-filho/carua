@@ -2,14 +2,11 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'rea
 import { Ionicons } from '@expo/vector-icons'; 
 import { Link } from 'expo-router';
 export default function Telefone() {
-  const navigation = useNavigation();
+
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <TouchableOpacity style={styles.seta} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={28} color="white" />
-      </TouchableOpacity>
-
+      
       <Text style={styles.titulo}>Contatos</Text>
 
       <Image

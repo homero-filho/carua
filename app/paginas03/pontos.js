@@ -5,29 +5,58 @@ import { Link } from 'expo-router';
 
 export default function Pontos() {
   const locais = [
-    { id: '1', nome: 'Caruaru Shopping', descricao: 'Local completo para família', imagem: require('../../src/assets/caruaru.jpg') },
-    { id: '2', nome: 'Pátio do Forró', descricao: 'Maior e melhor são joão do mundo,', imagem: require('../../src/assets/forro.jpg') },
-    { id: '3', nome: 'Prime Grill', descricao: 'Melhor e mais completo rodizio de carnes e massas da cidade.', imagem: require('../../src/assets/prime.jpeg') },
-    { id: '4', nome: 'Parque Ambiental', descricao: 'Espaço aberto perfeito para passar a tarde.', imagem: require('../../src/assets/parque.jpg') },
-    { id: '5', nome: 'Estação Ferroviária', descricao: 'Patrimônio da cidade.', imagem: require('../../src/assets/ferro.jpeg') },
-    { id: '6', nome: 'Soul Quintal Gastronomia', descricao: 'Todos os ingredientes para uma noite especial.', imagem: require('../../src/assets/quintal.jpeg') },
+    { id: '1', nome: 'Caruaru Shopping', 
+      descricao: 'Local completo para família', 
+      imagem: require('../../src/assets/caruaru.jpg'),
+    link: 'local1'},
+    { id: '2', nome: 'Pátio do Forró', 
+      descricao: 'Maior e melhor são joão do mundo', 
+      imagem: require('../../src/assets/forro.jpg'),
+          link: 'local2'},
+    { id: '3', nome: 'Prime Grill',
+       descricao: 'Melhor e mais completo rodizio de carnes e massas da cidade.',
+        imagem: require('../../src/assets/prime.jpeg'),
+        link: 'local3'},
+    { id: '4', nome: 'Parque Ambiental',
+       descricao: 'Espaço aberto perfeito para passar a tarde.', 
+       imagem: require('../../src/assets/parque.jpg'),
+      link: 'local4'},
+    { id: '5', nome: 'Estação Ferroviária', 
+      descricao: 'Patrimônio da cidade.', 
+      imagem: require('../../src/assets/ferro.jpeg'), 
+      link: 'local5'},
+    { id: '6', nome: 'Alto do Moura',
+       descricao: 'Maior centro de artes figurativas da AméricaMaior centro de artes figurativas da América.', 
+       imagem: require('../../src/assets/alto.jpg'),
+       link: 'local6'},
+    { id: '7', nome: 'Monte Bom Jesus', 
+      descricao: 'Um dos pontos mais emblemáticos da cidade, oferecendo uma bela vista panorâmica de Caruaru.', 
+      imagem: require('../../src/assets/monte.png'), link:'local7'},
+
   ];
 
-  const renderItem = ({ item }) => (
-    <View style={styles.item}>
-      <TouchableOpacity
-  style={styles.avatar}
->
-  <Image source={require('../../src/assets/gps.png')} style={styles.avatarImage} />
-</TouchableOpacity>
+
+
+const renderItem = ({ item }) => (
+  <Link href={`/paginas02/${item.link}`} asChild>
+    <TouchableOpacity style={styles.item}>
+      <View style={styles.avatar}>
+        <Image source={require('../../src/assets/gps.png')} style={styles.avatarImage} />
+      </View>
 
       <View style={styles.info}>
         <Text style={styles.nome}>{item.nome}</Text>
         <Text style={styles.descricao}>{item.descricao}</Text>
       </View>
+
       <Image source={item.imagem} style={styles.imagem} />
-    </View>
-  );
+    </TouchableOpacity>
+  </Link>
+  
+);
+
+
+
 
   return (
     
@@ -43,14 +72,20 @@ export default function Pontos() {
       />
 
        <View style={styles.footer}>
+        <Link href={"/paginas02/duvidas"} asChild>
         <TouchableOpacity style={styles.footerButton}>
           <Ionicons name="help-circle-outline" size={20} color="black" />
           <Text style={styles.footerText}>FAQ</Text>
         </TouchableOpacity>
+        </Link>
+
+        <Link href={"/paginas02/telefone"}asChild>
         <TouchableOpacity style={styles.footerButton}>
           <Ionicons name="mail-outline" size={20} color="black" />
           <Text style={styles.footerText}>Contato</Text>
         </TouchableOpacity>
+        </Link>
+        
       </View>
      
     </View>

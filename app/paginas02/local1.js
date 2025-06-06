@@ -3,16 +3,13 @@ import {View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView} 
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 
-export default function Local({ navigation }) {
+export default function Local1({ navigation }) {
   const [avaliacao, setAvaliacao] = useState(0);
   const [comentario, setComentario] = useState('');
 
   return (
     <ScrollView style={styles.container}>
-      {/* Botão de voltar */}
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={28} color="white" />
-      </TouchableOpacity>
+      
 
       {/* Cabeçalho com avatar e informações */}
       <View style={styles.header}>

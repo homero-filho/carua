@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#ADD8E6",
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: 20
   },
   titulo: {
     fontSize: 32,
     fontWeight: "bold",
     color: "#007BFF",
-    marginBottom: 20,
+    marginBottom: 20
   },
   
   
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 12,
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 10
   },
   link: {
     color: "#00a8ff",
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "column",
-    gap: 10,
+    gap: 10
   },
   botao: {
     backgroundColor: "#00a8ff",
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   botaoTexto: {
     color: "#fff",
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
 
   logo: {
@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 10,
     fontWeight: "bold",
-    fontFamily: "roboto",
-    color: "#00a8ff"
+    color: "#00a8ff",
+    fontStyle: "italic"
   }
 });
 

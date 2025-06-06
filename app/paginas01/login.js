@@ -54,7 +54,7 @@ export default function Login() {
 
 
             <TouchableOpacity style={styles.botao2}>
-                <Text style={styles.botao2}> Esqueceu sua senha? Clique aqui!</Text>
+                <Text style={styles.botao2}></Text> 
             </TouchableOpacity>
             <Link href={"/paginas03/pontos"} asChild>
             <TouchableOpacity style={styles.botao} onPress={validarLogin}>
@@ -62,10 +62,11 @@ export default function Login() {
             </TouchableOpacity>
             </Link>
             
-
+            <Link href={"/paginas01/cadastro"} asChild>
             <TouchableOpacity style={styles.botao2}>
                 <Text style={styles.botao2}> Ainda não possui uma conta? Cadastre-se aqui</Text>
             </TouchableOpacity>
+            </Link>
 
         </View>
     );
@@ -95,8 +96,8 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 10,
         fontWeight: "bold",
-        fontFamily: "roboto",
-        color: "#00a8ff"
+        color: "#00a8ff",
+        fontStyle: "italic"
     },
 
     texto1: {
@@ -161,13 +162,13 @@ const styles = StyleSheet.create({
         height: 45,
         marginTop: 10,
         borderRadius: 10,
-        width: 300,
+        width: 300
     },
 
     icon: {
         width: 24,
         height: 24,
-        marginRight: 10,
+        marginRight: 10
     }
 
 

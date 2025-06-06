@@ -6,6 +6,9 @@ import { Link } from 'expo-router';
 export default function Local1({ navigation }) {
   const [avaliacao, setAvaliacao] = useState(0);
   const [comentario, setComentario] = useState('');
+  
+
+
 
   return (
     <ScrollView style={styles.container}>

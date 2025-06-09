@@ -14,7 +14,8 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
@@ -29,22 +30,22 @@ export default function Local1({ navigation }) {
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/prime.jpeg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/prime.jpeg')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
+
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Informações</Text>
+        <Text style={styles.titulo}>Informações:</Text>
         <Text style={styles.link}>Prime Grill é uma churrascaria rodízio que oferece uma variedade de carnes grelhadas na brasa e um buffet de massas frescas, garantindo uma experiência completa para quem gosta de sabores tradicionais e qualidade no atendimento.</Text> 
         
-        <Text style={styles.titulo2}>Endereço:</Text>
+        <Text style={styles.titulo2}>Localização:</Text>
                 <Text style={styles.link}>
 •Rua Professor Leão, 511 - Maurício de Nassau, Caruaru - PE, 55012-070            </Text>
         
-        <Text style={styles.titulo2}>Horário</Text>
+        <Text style={styles.titulo2}>Horário:</Text>
                 <Text style={styles.link}>
               •Lojas:{"\n"}
               ∘Segunda a Sábado: 10h às 22h{"\n"}
@@ -57,7 +58,7 @@ export default function Local1({ navigation }) {
       </View>
 
 
-      {/* Avaliação */}
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>

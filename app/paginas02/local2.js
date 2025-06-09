@@ -11,7 +11,7 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
@@ -26,18 +26,18 @@ export default function Local1({ navigation }) {
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/forro.jpg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/forro.jpg')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
+
       <View style={styles.infoContainer}>
         <Text style={styles.titulo}>Informações:</Text>
         <Text style={styles.link}>O Pátio do Forró em Caruaru, também conhecido como Pátio de Eventos Luiz Gonzaga, é um palco principal do São João de Caruaru, a maior festa junina do Brasil, e tem a categoria de um espaço de grande evento, com foco em shows de forró e atividades festivas</Text>
         
-        <Text style={styles.titulo2}>Endereço:</Text>
+        <Text style={styles.titulo2}>Localização:</Text>
                 <Text style={styles.link}>
 •R. Agnelo Dias Vidal - Nossa Sra. das Dores, Caruaru - PE, 55002-310            </Text>
         
@@ -61,7 +61,7 @@ export default function Local1({ navigation }) {
         
       </View>
 
-      {/* Avaliação */}
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>

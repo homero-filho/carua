@@ -11,34 +11,52 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
           
         </View>
         <View>
-          <Text style={styles.local}>Local</Text>
-          <Text style={styles.categoria}>categorias</Text>
+          <Text style={styles.local}>Estação Ferroviária</Text>
+          <Text style={styles.categoria}>eventos</Text>
         </View>
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/ferro.jpeg')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
+
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Local</Text>
-        <Text style={styles.link}>Descrição, informações adicionais e horário de funcionamento</Text> 
+        <Text style={styles.titulo}>Informações: </Text>
+        <Text style={styles.link}>A Estação Ferroviária de Caruaru garante muita animação e celebração da cultura nordestina, durante a programação do São João 2025. Com polos ativos em diferentes expressões da cultura popular, o espaço foi ponto de encontro para quem buscava diversidade musical e tradição. No contexto do São João, a estação é um ponto de partida para quem se dirige ao Pátio do Forró e para outras áreas da cidade. A estação também tem sido objeto de investimentos para aprimorar e valorizar o patrimônio histórico, com projetos que visam a revitalização do local e a criação de novos usos. 
+A Estação Ferroviária de Caruaru é um espaço vivo, que continua a ser um ponto de encontro e celebração para a comunidade, especialmente durante as festividades juninas e outras atividades culturais. </Text> 
+      
+      <Text style={styles.titulo2}>Localização:</Text>
+                    <Text style={styles.link}>
+                  •R. Silva Filho, 7 - Maurício de Nassau, Caruaru - PE, 55004-200
+                </Text>
+            
+            <Text style={styles.titulo2}>Horário:</Text>
+                    <Text style={styles.link}>
+                
+                  ∘Aberto 24h
+                  
+                </Text>
+      
+      
+      
+      
       </View>
 
-      {/* Avaliação */}
+
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>
@@ -122,6 +140,13 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+    titulo2:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 8
+
   },
  
   link: {

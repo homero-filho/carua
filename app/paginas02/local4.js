@@ -11,7 +11,7 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
@@ -26,24 +26,24 @@ export default function Local1({ navigation }) {
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/parque.jpg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/parque.jpg')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
+
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Informações</Text>
+        <Text style={styles.titulo}>Endereço:</Text>
         <Text style={styles.link}>O primeiro parque urbano de Caruaru é um bom exemplo de restauração ambiental para benefício da população. Numa área com aproximadamente 4 hectares, destacam-se a Sementeira Municipal Chico Mendes, o Memorial do Asfalto, e um Jardim Sensorial, onde deficientes visuais podem dirigir-se através do toque e cheiro das plantas ali expostas.</Text> 
       </View>
 
-      <Text style={styles.titulo2}>Endereço:</Text>
+      <Text style={styles.titulo2}>Localização:</Text>
               <Text style={styles.link}>
             •Av. José Rodrigues de Jesus, s/n - Indianópolis, Caruaru - PE, 55026-005
           </Text>
       
-      <Text style={styles.titulo2}>Horário</Text>
+      <Text style={styles.titulo2}>Horário:</Text>
               <Text style={styles.link}>
           
             ∘Segunda: fechado{"\n"}
@@ -54,7 +54,7 @@ export default function Local1({ navigation }) {
         
         
 
-      {/* Avaliação */}
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>

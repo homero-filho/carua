@@ -11,34 +11,45 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
           
         </View>
         <View>
-          <Text style={styles.local}>Local</Text>
-          <Text style={styles.categoria}>categorias</Text>
+          <Text style={styles.local}>Monte Bom Jesus</Text>
+          <Text style={styles.categoria}>lazer</Text>
         </View>
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/monte.png')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
-      <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Local</Text>
-        <Text style={styles.link}>Descrição, informações adicionais e horário de funcionamento</Text> 
-      </View>
 
-      {/* Avaliação */}
+      <View style={styles.infoContainer}>
+                    <Text style={styles.titulo}>Informações: </Text>
+                    <Text style={styles.link}> Um dos pontos mais emblemáticos da cidade, o Monte do Bom Jesus, com seus 630 metros de altitude. Oferece uma bela vista panorâmica de Caruaru. A sua escadaria, com a representação da Via Sacra, tem 365 degraus e foi construída na década de sessenta pelas famílias católicas da cidade. Ela é um dos principais acessos à igrejinha de Santa Luzia, construída em 1902. A cada dezembro realiza-se a festa da santa. De várias partes da cidade é possível avistar o Monte, que sempre serviu de orientação para os antigos moradores. É também um belo lugar para fazer selfies com Caruaru ao fundo.</Text>
+                  <Text style={styles.titulo2}>Localização:</Text>
+                                <Text style={styles.link}>
+                              •Unnamed Road - Morro do Bom Jesus, Caruaru - PE, 55008-391
+                            </Text>
+                        
+                        <Text style={styles.titulo2}>Horário:</Text>
+                                <Text style={styles.link}>
+                            
+                              ∘Aberto 24h
+                              
+                            </Text>
+                  </View>
+
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>
@@ -122,6 +133,13 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  titulo2:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 8
+
   },
  
   link: {

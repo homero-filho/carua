@@ -11,34 +11,44 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
           
         </View>
         <View>
-          <Text style={styles.local}>Local</Text>
-          <Text style={styles.categoria}>categorias</Text>
+          <Text style={styles.local}>Alto do Moura</Text>
+          <Text style={styles.categoria}>eventos</Text>
         </View>
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
        <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+          source={require('../../src/assets/alto.jpg')} 
           style={styles.imagemLocal}
-          resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+          resizeMode="cover" 
         />
       </View>
 
-      {/* Informações */}
-      <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Local</Text>
-        <Text style={styles.link}>Descrição, informações adicionais e horário de funcionamento</Text> 
-      </View>
 
-      {/* Avaliação */}
+      <View style={styles.infoContainer}>
+              <Text style={styles.titulo}>Informações: </Text>
+              <Text style={styles.link}> O Alto do Moura, localizado em Caruaru (PE), é conhecido como o maior centro de arte figurativa das Américas, sendo um importante polo turístico e cultural. O bairro ganhou fama principalmente pelo trabalho com o barro, tradição herdada de influências indígenas, africanas e portuguesas. A argila retirada do rio Ipojuca é usada por artesãos locais para criar peças que retratam a vida no sertão. O principal nome desse movimento é Mestre Vitalino, que eternizou cenas do cotidiano nordestino em esculturas e inspirou gerações. O local abriga hoje a Casa Museu Mestre Vitalino, além de diversos ateliês abertos ao público, onde é possível ver os artistas trabalhando. Durante o ano todo, mas especialmente no período do São João, o Alto do Moura atrai turistas com sua rica produção artesanal, gastronomia regional e ambiente animado, tornando-se um dos destinos mais autênticos e vivos do Nordeste brasileiro.</Text>
+            <Text style={styles.titulo2}>Localização:</Text>
+                          <Text style={styles.link}>
+                        •Estrada Alto do Moura, s/n – Alto do Moura, Caruaru – PE, CEP 55040‑120
+                      </Text>
+                  
+                  <Text style={styles.titulo2}>Horário:</Text>
+                          <Text style={styles.link}>
+                      
+                        ∘Aberto 24h
+                        
+                      </Text>
+            </View>
+
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>
@@ -122,6 +132,13 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  titulo2:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 8
+
   },
  
   link: {

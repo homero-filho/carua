@@ -11,7 +11,7 @@ export default function Local1({ navigation }) {
     <ScrollView style={styles.container}>
       
 
-      {/* Cabeçalho com avatar e informações */}
+
       <View style={styles.header}>
         <View style={styles.avatar}>
           <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
@@ -24,22 +24,22 @@ export default function Local1({ navigation }) {
         <MaterialIcons  style={styles.menuIcon} />
       </View>
 
-      {/* Imagem do local */}
+
       <View style={styles.imagemContainer}>
   <Image
-    source={require('../../src/assets/caruaru.jpg')} // coloque aqui sua imagem real
+    source={require('../../src/assets/caruaru.jpg')}
     style={styles.imagemLocal}
-    resizeMode="cover" // ou "contain", se quiser mostrar a imagem toda
+    resizeMode="cover" 
   />
 </View>
 
 
-      {/* Informações */}
+
       <View style={styles.infoContainer}>
         <Text style={styles.titulo}>Informações:</Text>
         <Text style={styles.link}>Shopping Caruaru é o maior shopping do interior do Nordeste. Seu destaque se dá pela ampla variedade de lojas, opções de lazer e restaurantes.</Text> 
         
-        <Text style={styles.titulo2}>Endereço:</Text>
+        <Text style={styles.titulo2}>Localização:</Text>
         <Text style={styles.link}>
       •Av. Adjar da Silva Casé, 800 - Indianópolis, Caruaru - PE, 55024-740
     </Text>
@@ -47,7 +47,7 @@ export default function Local1({ navigation }) {
         
         
         
-        <Text style={styles.titulo2}>Horário</Text>
+        <Text style={styles.titulo2}>Horário:</Text>
         <Text style={styles.link}>
       •Lojas:{"\n"}
       ∘Segunda a Sábado: 10h às 22h{"\n"}
@@ -64,7 +64,7 @@ export default function Local1({ navigation }) {
       
       </View>
 
-      {/* Avaliação */}
+
       <View style={styles.avaliacaoContainer}>
         <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
         <View style={styles.estrelas}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, Alert } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // Não esqueça de instalar o pacote
+import { Ionicons } from '@expo/vector-icons'; 
 import { Link } from 'expo-router';
 
 export default function Pontos() {

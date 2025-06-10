@@ -61,7 +61,7 @@ textInput: {
     marginBottom: 10
   },
   link: {
-    color: "#00a8ff",
+    color: "#0077cc",
     marginBottom: 20,
     fontWeight: "bold",
     fontFamily: "roboto",
@@ -72,9 +72,9 @@ textInput: {
     gap: 10
   },
   botao: {
-    backgroundColor: "#00a8ff",
-    paddingVertical: 10,
-    paddingHorizontal: 30,
+    backgroundColor: "#0077cc",
+    paddingVertical: 12,
+    paddingHorizontal: 100,
     borderRadius: 10,
     alignItems: "center"
   },
@@ -86,14 +86,13 @@ textInput: {
 logo: {
     marginTop: -150,
     position: "relative",
-    width: 280,
-    height: 281
+    width: 200,
+    height: 201
 },
   texto: {
-    fontSize: 50,
-    position: "absolute",
-    top: 10,
+    fontSize: 36,
     fontWeight: "bold",
-    color: "#00a8ff",
-    fontStyle: "italic"
+    color: "#0077cc",
+    marginBottom: 30,
+    textAlign: "center",
   }});

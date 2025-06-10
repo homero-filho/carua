@@ -1,5 +1,6 @@
 import { useRouter } from 'expo-router';
 import { Image, Text, View } from 'react-native';
+import { Button } from 'react-native-web';
 
 export default function Modal2() {
   const router = useRouter();

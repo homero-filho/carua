@@ -39,7 +39,7 @@ export default function Pontos() {
     <View style={styles.container}>
       {/* Header com ícone e nome do usuário */}
       <View style={styles.userHeader}>
-        <Ionicons name="person-circle-outline" size={40} color="#00aaff" />
+        <Ionicons name="person-circle-outline" size={40} color="#0077cc" />
         <Text style={styles.userName}>{user?.nome || 'Usuário'}</Text>
       </View>
 
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 
   userName: {
     fontSize: 20,
-    color: '#00aaff',
+    color: '#0077cc',
     fontWeight: 'bold',
     marginLeft: 8,
   },
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 50,
     fontWeight: 'bold',
-    color: '#00aaff',
+    color: '#0077cc',
     textAlign: 'center',
     marginBottom: 20,
     fontStyle: 'italic',

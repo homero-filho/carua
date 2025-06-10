@@ -25,7 +25,7 @@ export default function Local1({ navigation }) {
   const [loading, setLoading] = useState(true); // Para o indicador de "carregando"
   const { user } = useContext(UserContext); // Pega o usuário logado
 
-  const LOCAL_ID = 'monte-jesus'; // FIZ ISSO
+  const LOCAL_ID = 'monte-jesus'; 
   
   /**
    * Busca a lista de todas as avaliações na API

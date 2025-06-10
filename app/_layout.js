@@ -27,10 +27,10 @@ export default function Layout() {
         <Stack.Screen name="paginas02/local5" options={{title: "Locais"}} />
         <Stack.Screen name="paginas02/local6" options={{title: "Locais"}} />
         <Stack.Screen name="paginas02/local7" options={{title: "Locais"}} />
-        <Stack.Screen name="paginas02/modal1" options={{ presentation: 'modal', title: 'Quem Somos', headerShown: false }} />
-        <Stack.Screen name="paginas02/modal2" options={{ presentation: 'modal', title: 'Dúvida 2', headerShown: false }} />
-        <Stack.Screen name="paginas02/modal3" options={{ presentation: 'modal', title: 'Dúvida 3', headerShown: false }} />
-        <Stack.Screen name="paginas02/modal4" options={{ presentation: 'modal', title: 'Dúvida 4', headerShown: false }} />
+        <Stack.Screen name="paginas02/modal1" options={{ presentation: 'modal', title: 'Quem Somos?', headerShown: false }} />
+        <Stack.Screen name="paginas02/modal2" options={{ presentation: 'modal', title: 'O app funciona offline?', headerShown: false }} />
+        <Stack.Screen name="paginas02/modal3" options={{ presentation: 'modal', title: 'A cidade é segura para turistas?', headerShown: false }} />
+        <Stack.Screen name="paginas02/modal4" options={{ presentation: 'modal', title: 'O aplicativo terá atualicações', headerShown: false }} />
       </Stack>
     </UserProvider>
   );

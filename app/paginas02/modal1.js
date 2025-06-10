@@ -16,7 +16,7 @@ export default function Modal1() {
     }}>
 
         <Image source={require("../../src/assets/gps.png")}
-        style ={{marginTop: -150, position: "relative", width: 280, height: 281}}
+        style ={{marginTop: -150, position: "relative", width: 200, height: 201}}
         />
       <Text style={{ fontSize: 20, marginBottom: 20, color: "#00a8ff", lineHeight: 24, textAlign: 'justify', }}>
 

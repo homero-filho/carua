@@ -56,7 +56,7 @@ export default function Login() {
         <TextInput
           style={styles.textInput}
           onChangeText={setEmail}
-          placeholder='Email'
+          placeholder='E-mail'
           placeholderTextColor={"#ADD8E6"}
           value={email}
           keyboardType="email-address"
@@ -80,7 +80,7 @@ export default function Login() {
         <Text style={styles.botao1}> Acessar </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.botao2}>
+      <TouchableOpacity style={styles.botao2}  onPress={() => router.push("/paginas01/cadastro")}>
         <Text style={styles.botao2}> Ainda não possui uma conta? Cadastre-se aqui</Text>
       </TouchableOpacity>
     </View>
@@ -91,111 +91,76 @@ export default function Login() {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#ADD8E6",
-        justifyContent: "center",
-        alignItems: "center",
+  container: {
+    flex: 1,
+    backgroundColor: "#ADD8E6",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
 
-    },
+  logo: {
+    width: 150,
+    height: 150,
+    marginBottom: 10,
+  },
 
-    logo: {
-        marginTop: -250,
-        position: "relative",
-        width: 200,
-        height: 201
+  texto: {
+    fontSize: 36,
+    fontWeight: "bold",
+    color: "#0077cc",
+    marginBottom: 30,
+    textAlign: "center",
+  },
 
-    },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#00a8ff',
+    paddingHorizontal: 10,
+    height: 50,
+    borderRadius: 10,
+    width: '100%',
+    marginBottom: 15,
+  },
 
-    texto: {
-        fontSize: 50,
-        position: "absolute",
-        top: 10,
-        fontWeight: "bold",
-        color: "#00a8ff",
-        fontStyle: "italic"
-    },
+  icon: {
+    width: 24,
+    height: 24,
+    marginRight: 10
+  },
 
-    texto1: {
-        fontSize: 30,
-        fontWeight: "bold",
-        fontFamily: "roboto",
-        color: "#F8F8FF"
-    },
+  textInput: {
+    flex: 1,
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 
-    input: {
-        backgroundColor: "#00a8ff",
-        padding: 10,
-        height: 45,
-        marginTop: 10,
-        borderRadius: 10,
-        fontWeight: "bold",
-        fontSize: 20,
-        width: 300
+  botao: {
+    alignItems: "center",
+    backgroundColor: "#0077cc",
+    paddingVertical: 12,
+    paddingHorizontal: 25,
+    borderRadius: 10,
+    marginTop: 30,
+    width: '100%',
+  },
 
+  botao1: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff"
+  },
 
-
-
-
-
-
-
-    },
-    
-
-    botao1: {
-        fontFamily: "roboto",
-        fontSize: 22,
-        fontWeight: "bold",
-        color: "#F8F8FF"
-    },
-
-    botao: {
-        alignItems: "center",
-        backgroundColor: "#00a8ff",
-        padding: 10,
-        width: "50%",
-        height: 45,
-        marginTop: 200,
-        borderRadius: 10,
-        fontWeight: "bold",
-        fontSize: 20
-
-    },
-
-    botao2: {
-        color: "#00a8ff",
-        fontFamily: "roboto",
-        fontWeight: "bold",
-        marginBottom: -150
-    },
-
-    inputContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#00a8ff',
-        paddingHorizontal: 10,
-        height: 45,
-        marginTop: 10,
-        borderRadius: 10,
-        width: 300
-    },
-
-    icon: {
-        width: 24,
-        height: 24,
-        marginRight: 10
-    }
-
-
-
-
-
-
-
-
-
-})
+  botaoTextoSecundario: {
+    marginTop: 20,
+    color: "#0077cc",
+    fontSize: 16,
+    fontWeight: "bold",
+    textDecorationLine: "underline"
+  }
+});
 
 
 

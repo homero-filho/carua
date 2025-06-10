@@ -1,36 +1,38 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
+
 import { Link } from "expo-router";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { UserProvider } from '../src/assets/context/UserContext';
+
+
 
 export default function Principal() {
   return (
+    <UserProvider>
       <View style={styles.container}>
-          <Image
-            source={require("../src/assets/gps.png")}
-            style={styles.logo}
-          />
-    
-          <Text style={styles.texto}> Caruaru Tour </Text>
-    
+        <Image
+          source={require("../src/assets/gps.png")}
+          style={styles.logo}
+        />
 
+        <Text style={styles.texto}> Caruaru Tour </Text>
 
-      <Text style={styles.link}>Seja bem-vindo ao Caruaru Tour!</Text>
+        <Text style={styles.link}>Seja bem-vindo ao Caruaru Tour!</Text>
 
-      <View style={styles.buttonRow}>
-        <Link href={"/paginas01/login"} asChild>
-        
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Acessar Conta</Text>
-        </TouchableOpacity>
-        </Link>
+        <View style={styles.buttonRow}>
+          <Link href={"/paginas01/login"} asChild>
+            <TouchableOpacity style={styles.botao}>
+              <Text style={styles.botaoTexto}>Acessar Conta</Text>
+            </TouchableOpacity>
+          </Link>
 
-        <Link href={"/paginas01/cadastro"} asChild>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Cadastrar Conta</Text>
-        </TouchableOpacity>
-        </Link>
+          <Link href={"/paginas01/cadastro"} asChild>
+            <TouchableOpacity style={styles.botao}>
+              <Text style={styles.botaoTexto}>Cadastrar Conta</Text>
+            </TouchableOpacity>
+          </Link>
+        </View>
       </View>
-      
-    </View>
+    </UserProvider>
   );
 }
 
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#007BFF",
     marginBottom: 20
+  
   },
   
-  
-  textInput: {
+textInput: {
     backgroundColor: "#fff",
     width: "100%",
     borderRadius: 10,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
   link: {
     color: "#00a8ff",
     marginBottom: 20,
-    ontWeight: "bold",
+    fontWeight: "bold",
     fontFamily: "roboto",
     fontSize: 20
   },
@@ -81,22 +83,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold"
   },
-
-  logo: {
+logo: {
     marginTop: -150,
     position: "relative",
     width: 280,
     height: 281
-
-  },
-
-  texto:{
-     fontSize: 50,
+},
+  texto: {
+    fontSize: 50,
     position: "absolute",
     top: 10,
     fontWeight: "bold",
     color: "#00a8ff",
     fontStyle: "italic"
-  }
-});
-
+  }});

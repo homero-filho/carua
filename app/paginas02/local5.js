@@ -1,64 +1,136 @@
-import React, { useState } from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView} from 'react-native';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useContext, useEffect, useState } from 'react';
+import {
+  ActivityIndicator,
+  Alert,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
+} from 'react-native';
+import { UserContext } from '../../src/assets/context/UserContext';
+
+// api
+import api from '../api/axios/api';
 
 export default function Local1({ navigation }) {
-  const [avaliacao, setAvaliacao] = useState(0);
-  const [comentario, setComentario] = useState('');
+
+  // --- ESTADOS DO COMPONENTE ---
+  const [avaliacao, setAvaliacao] = useState(0); // Para o formulário de nota
+  const [comentario, setComentario] = useState(''); // Para o formulário de comentário
+  const [listaAvaliacoes, setListaAvaliacoes] = useState([]); // Para armazenar a lista da API de avaliaçoes
+  const [loading, setLoading] = useState(true); // Para o indicador de "carregando"
+  const { user } = useContext(UserContext); // Pega o usuário logado
+
+  const LOCAL_ID = 'parque-ambiental'; // FIZ ISSO
+  
+  /**
+   * Busca a lista de todas as avaliações na API
+   */
+
+   const fetchAvaliacoes = async () => {
+    try {
+      setLoading(true);
+      const response = await api.get(`/avaliacoes/local/${LOCAL_ID}`);	 // MUDOU AQUI 
+      setListaAvaliacoes(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar avaliações:", error);
+      Alert.alert("Erro", "Não foi possível carregar as avaliações.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /**
+   * Envia uma nova avaliação para a API
+   */
+  const handleEnviarAvaliacao = async () => {
+    if (avaliacao === 0 || !comentario.trim() || !user?.id) {
+      Alert.alert('Erro', 'Por favor, preencha a nota, o comentário e esteja logado.');
+      return;
+    }
+
+  
+    const dadosAvaliacao = {
+      descricao: comentario,
+      avaliacao: avaliacao,
+      usuario: { id: user.id },
+      localId: LOCAL_ID, // MUDOU AQUI MANDA O LOCAL ID 
+    };
+
+    try {
+      await api.post('/avaliacoes', dadosAvaliacao);
+      Alert.alert('Sucesso!', 'Sua avaliação foi enviada com sucesso.');
+      setAvaliacao(0);
+      setComentario('');
+    
+      fetchAvaliacoes();
+    } catch (error) {
+      console.error(error);
+      if (error.response) {
+       Alert.alert('Erro no Servidor', `Não foi possível enviar a avaliação. Detalhes: ${error.response.data.message || 'Tente novamente'}`);
+
+      } else if (error.request) {
+        Alert.alert('Erro de Conexão', 'Não foi possível se conectar ao servidor.');
+      } else {
+        Alert.alert('Erro Inesperado', 'Ocorreu um erro ao processar sua solicitação.');
+      }
+    }
+  };
+
+  // Roda a função para buscar as avaliações quando a tela é aberta pela primeira vez
+  useEffect(() => {
+    fetchAvaliacoes();
+  }, []);
+
 
   return (
     <ScrollView style={styles.container}>
       
-
-
       <View style={styles.header}>
         <View style={styles.avatar}>
-          <Image style={styles.icon} source={require("../../src/assets/tour.png")}/>
-          
+          <Image style={styles.icon} source={require("../../src/assets/tour.png")} />
         </View>
         <View>
-          <Text style={styles.local}>Estação Ferroviária</Text>
-          <Text style={styles.categoria}>eventos</Text>
+          <Text style={styles.local}>Parque Ambiental</Text>
+          <Text style={styles.categoria}>Lazer</Text>
         </View>
-        <MaterialIcons  style={styles.menuIcon} />
       </View>
 
-       <View style={styles.imagemContainer}>
+      <View style={styles.imagemContainer}>
         <Image
-          source={require('../../src/assets/ferro.jpeg')} 
+          source={require('../../src/assets/parque.jpg')}
           style={styles.imagemLocal}
-          resizeMode="cover" 
+          resizeMode="cover"
         />
       </View>
 
-
       <View style={styles.infoContainer}>
-        <Text style={styles.titulo}>Informações: </Text>
-        <Text style={styles.link}>A Estação Ferroviária de Caruaru garante muita animação e celebração da cultura nordestina, durante a programação do São João 2025. Com polos ativos em diferentes expressões da cultura popular, o espaço foi ponto de encontro para quem buscava diversidade musical e tradição. No contexto do São João, a estação é um ponto de partida para quem se dirige ao Pátio do Forró e para outras áreas da cidade. A estação também tem sido objeto de investimentos para aprimorar e valorizar o patrimônio histórico, com projetos que visam a revitalização do local e a criação de novos usos. 
-A Estação Ferroviária de Caruaru é um espaço vivo, que continua a ser um ponto de encontro e celebração para a comunidade, especialmente durante as festividades juninas e outras atividades culturais. </Text> 
-      
-      <Text style={styles.titulo2}>Localização:</Text>
-                    <Text style={styles.link}>
-                  •R. Silva Filho, 7 - Maurício de Nassau, Caruaru - PE, 55004-200
-                </Text>
-            
-            <Text style={styles.titulo2}>Horário:</Text>
-                    <Text style={styles.link}>
-                
-                  ∘Aberto 24h
-                  
-                </Text>
-      
-      
-      
-      
+        <Text style={styles.titulo}>Endereço:</Text>
+        <Text style={styles.link}>O primeiro parque urbano de Caruaru é um bom exemplo de restauração ambiental para benefício da população. Numa área com aproximadamente 4 hectares, destacam-se a Sementeira Municipal Chico Mendes, o Memorial do Asfalto, e um Jardim Sensorial, onde deficientes visuais podem dirigir-se através do toque e cheiro das plantas ali expostas.</Text> 
       </View>
 
+      <Text style={styles.titulo2}>Localização:</Text>
+              <Text style={styles.link}>
+            •Av. José Rodrigues de Jesus, s/n - Indianópolis, Caruaru - PE, 55026-005
+          </Text>
+      
+      <Text style={styles.titulo2}>Horário:</Text>
+              <Text style={styles.link}>
+          
+            ∘Segunda: fechado{"\n"}
+            ∘Terça à Domingo: 06:00 -- 18:00
 
-
+            
+          </Text>
+      
+      {/* Seção para Deixar uma Avaliação */}
       <View style={styles.avaliacaoContainer}>
-        <Text style={styles.avaliacaoTexto}>Avalie o Local</Text>
+        <Text style={styles.avaliacaoTexto}>Deixe sua avaliação</Text>
+        
         <View style={styles.estrelas}>
           {[1, 2, 3, 4, 5].map((i) => (
             <TouchableOpacity key={i} onPress={() => setAvaliacao(i)}>
@@ -70,10 +142,49 @@ A Estação Ferroviária de Caruaru é um espaço vivo, que continua a ser um po
             </TouchableOpacity>
           ))}
         </View>
+
+        <TextInput
+          style={styles.inputComentario}
+          placeholder="Escreva seu comentário aqui..."
+          placeholderTextColor="#888"
+          multiline
+          value={comentario}
+          onChangeText={setComentario}
+        />
+
+        <TouchableOpacity style={styles.botaoEnviar} onPress={handleEnviarAvaliacao}>
+          <Text style={styles.botaoEnviarTexto}>Enviar Avaliação</Text>
+        </TouchableOpacity>
       </View>
 
-     
-      
+      {/* Seção para Exibir Avaliações Existentes */}
+      <View style={styles.listaContainer}>
+        <Text style={styles.listaTitulo}>Avaliações</Text>
+        {loading ? (
+          <ActivityIndicator size="large" color="#3FA9F5" />
+        ) : (
+          listaAvaliacoes.length === 0 ? (
+            <Text style={styles.semAvaliacoes}>Nenhuma avaliação ainda. Seja o primeiro a avaliar!</Text>
+          ) : (
+            listaAvaliacoes.map((item) => (
+              <View key={item.id} style={styles.cardAvaliacao}>
+                <Text style={styles.cardUsuario}>{item.usuario.nome}</Text>
+                <View style={styles.estrelasCard}>
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <MaterialIcons
+                      key={i}
+                      name={i <= item.avaliacao ? 'star' : 'star-border'}
+                      size={16}
+                      color="#f1c40f"
+                    />
+                  ))}
+                </View>
+                <Text style={styles.cardDescricao}>{item.descricao}</Text>
+              </View>
+            ))
+          )
+        )}
+      </View>
     </ScrollView>
   );
 }
@@ -84,19 +195,10 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
   },
-  backButton: {
-    backgroundColor: '#3FA9F5',
-    borderRadius: 8,
-    width: 40,
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   header: {
     marginTop: 16,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
   },
   avatar: {
     backgroundColor: '#3FA9F5',
@@ -105,34 +207,29 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
+    marginRight: 12,
   },
-  avatarText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 20,
+  icon: {
+    width: 40,
+    height: 40,
   },
   local: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 12,
   },
   categoria: {
-    marginLeft: 12,
     color: '#3FA9F5',
   },
-  menuIcon: {
-    marginLeft: 'auto',
-  },
-  imagemPlaceholder: {
-    height: 180,
+  imagemContainer: {
+    height: 200,
+    borderRadius: 12,
+    overflow: 'hidden',
     backgroundColor: '#ccc',
-    justifyContent: 'center',
-    alignItems: 'center',
     marginVertical: 20,
   },
-  placeholderText: {
-    color: '#777',
-    fontStyle: 'italic',
+  imagemLocal: {
+    width: '100%',
+    height: '100%',
   },
   infoContainer: {
     paddingHorizontal: 8,
@@ -141,56 +238,94 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-
-    titulo2:{
+  titulo2: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 8
-
+    marginTop: 16,
   },
- 
-  link: {
-    color: '#3FA9F5',
+  infoTexto: {
+    color: 'black',
     marginTop: 8,
   },
   avaliacaoContainer: {
     alignItems: 'center',
     marginVertical: 20,
+    padding: 10,
+    backgroundColor: '#E0F7FA',
+    borderRadius: 10,
   },
   avaliacaoTexto: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 8,
   },
   estrelas: {
     flexDirection: 'row',
+    marginBottom: 16,
   },
-  comentarios: {
-    backgroundColor: '#eee',
-    padding: 12,
+  inputComentario: {
+    backgroundColor: '#FFF',
+    width: '100%',
+    minHeight: 100,
     borderRadius: 8,
-  },
-  input: {
-    minHeight: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
     textAlignVertical: 'top',
+    fontSize: 16,
+    color: '#333',
+    marginBottom: 16,
   },
-
-  icon: {
-    width: 60,
-    height: 60,
-    
+  botaoEnviar: {
+    backgroundColor: '#3FA9F5',
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 25,
+    elevation: 3,
   },
-
-  imagemContainer: {
-  height: 200,
-  borderRadius: 12,
-  overflow: 'hidden',
-  backgroundColor: '#ccc',
-  marginVertical: 20,
-},
-
-imagemLocal: {
-  width: '100%',
-  height: '100%',
-}
+  botaoEnviarTexto: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  listaContainer: {
+    marginTop: 20,
+    paddingHorizontal: 8,
+    paddingBottom: 40, 
+  },
+  listaTitulo: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  semAvaliacoes: {
+    textAlign: 'center',
+    color: '#555',
+    fontStyle: 'italic',
+  },
+  cardAvaliacao: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  cardUsuario: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 4,
+  },
+  estrelasCard: {
+    flexDirection: 'row',
+  },
+  cardDescricao: {
+    fontSize: 14,
+    color: '#444',
+    marginTop: 8,
+  },
 });

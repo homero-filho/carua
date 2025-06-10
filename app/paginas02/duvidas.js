@@ -1,13 +1,19 @@
-import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Ionicons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Duvidas() {
   const [telefone, setTelefone] = useState();
   const [senha, setSenha] = useState();
   const [input2, setInput2] = useState();
   const [input3, setInput3] = useState();
+
+  const router = useRouter();
+
+  function validarLogin() {
+
+
+    }
 
   return (
     <View style={styles.container}>
@@ -20,46 +26,33 @@ export default function Duvidas() {
         style={styles.logo}
         resizeMode="contain"
       />
+      
+      
+        <TouchableOpacity style={styles.botao2} />
+      <TouchableOpacity style={styles.botao} onPress={() => router.push('/paginas02/modal1')}>
+        <Text style={styles.botao1}>Quem somos?</Text>
+      </TouchableOpacity>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setTelefone(value)}
-          placeholder=""
-          placeholderTextColor="#ADD8E6"
-          secureTextEntry
-        />
-      </View>
+      <TouchableOpacity style={styles.botao2} />
+      <TouchableOpacity style={styles.botao} onPress={() => router.push('/paginas02/modal2')}>
+        <Text style={styles.botao1}>O app funciona offline?</Text>
+      </TouchableOpacity>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setSenha(value)}
-          placeholder=""
-          placeholderTextColor="#ADD8E6"
-          secureTextEntry
-        />
-      </View>
+      <TouchableOpacity style={styles.botao2} />
+      <TouchableOpacity style={styles.botao} onPress={() => router.push('/paginas02/modal3')}>
+        <Text style={styles.botao1}>A cidade é segura para turistas?</Text>
+      </TouchableOpacity>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setInput2(value)}
-          placeholder=""
-          placeholderTextColor="#ADD8E6"
-          secureTextEntry
-        />
-      </View>
+      <TouchableOpacity style={styles.botao2} />
+      <TouchableOpacity style={styles.botao} onPress={() => router.push('/paginas02/modal4')}>
+        <Text style={styles.botao1}>O aplicativo terá atualizações?</Text>
+      </TouchableOpacity>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          onChangeText={value => setInput3(value)}
-          placeholder=""
-          placeholderTextColor="#ADD8E6"
-          secureTextEntry
-        />
-      </View>
+
+      
+
+
+      
     </View>
   );
 }
@@ -116,4 +109,32 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#fff',
   },
+
+  
+    botao1: {
+        fontFamily: "roboto",
+        fontSize: 22,
+        fontWeight: "bold",
+        color: "#F8F8FF"
+    },
+
+    botao: {
+        alignItems: "center",
+        backgroundColor: "#00a8ff",
+        padding: 10,
+        width: "110%",
+        height: 45,
+        marginTop: 200,
+        borderRadius: 10,
+        fontWeight: "bold",
+        fontSize: 20
+
+    },
+
+    botao2: {
+        color: "#00a8ff",
+        fontFamily: "roboto",
+        fontWeight: "bold",
+        marginBottom: -180
+    },
 });

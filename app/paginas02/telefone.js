@@ -1,6 +1,4 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; 
-import { Link } from 'expo-router';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 export default function Telefone() {
 
 
@@ -17,12 +15,12 @@ export default function Telefone() {
 
       <View style={styles.caixaContato}>
         <Text style={styles.textoContato}>Telefone de Contato:</Text>
-        <Text style={styles.textoInfo}>(99) 9999-9999</Text>
+        <Text style={styles.textoInfo}>(81) 98578-0861</Text>
       </View>
 
       <View style={styles.caixaContato}>
         <Text style={styles.textoContato}>Email de Contato:</Text>
-        <Text style={styles.textoInfo}>exemplo@email.com</Text>
+        <Text style={styles.textoInfo}>caruarutour@gmail.com</Text>
       </View>
     </ScrollView>
   );
